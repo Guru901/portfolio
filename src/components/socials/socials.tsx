@@ -47,7 +47,7 @@ export default function Socials() {
         </svg>
       ),
       index: 1,
-      href: "discord.com/users/guruuu_911",
+      href: "https://discord.com/users/guruuu_911",
     },
     {
       icon: (
