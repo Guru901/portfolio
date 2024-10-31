@@ -14,23 +14,23 @@ html,
 body {
   height: 100%;
   width: 100%;
-  cursor: url("../../public/cursors/default@2x.png"), auto;
+  cursor: url("/cursors/default@2x.png"), auto;
 }
 
 button {
-  cursor: url("../../public/cursors/handpointing@2x.png"), auto;
+  cursor: url("/cursors/handpointing@2x.png"), auto;
 }
 
 a {
-  cursor: url("../../public/cursors/handpointing@2x.png"), auto;
+  cursor: url("/cursors/handpointing@2x.png"), auto;
 }
 
 input {
-  cursor: url("../../public/cursors/textcursor@2x.png"), auto;
+  cursor: url("/cursors/textcursor@2x.png"), auto;
 }
 
 textarea {
-  cursor: url("../../public/cursors/textcursor@2x.png"), auto;
+  cursor: url("/cursors/textcursor@2x.png"), auto;
 }
 
 .bold-font {
