@@ -49,6 +49,7 @@ export default function Socials() {
         fill="black"
       />
     </svg>,
+
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="32"
@@ -75,7 +76,7 @@ export default function Socials() {
   return (
     <div className={styles.socialsContainer}>
       {icons.map((icon, index) => (
-        <div key={index}>{icon}</div>
+        <div key={String(icon)}>{icon}</div>
       ))}
     </div>
   );
