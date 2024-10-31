@@ -6,6 +6,8 @@ import Projects from "@/components/projects/projects";
 import { useEffect } from "react";
 import smoothScroll from "@/components/smoothScroll";
 import Loader from "@/components/loader/loader";
+import MouseFollower from "@/components/mouseFollower";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -13,7 +15,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-10">
+    <main className="flex flex-col gap-10 pb-10">
+      <MouseFollower />
       <Loader />
       <Navbar />
       <Socials />
@@ -26,6 +29,7 @@ export default function Home() {
         </h1>
       </div>
       <Projects />
+      <Footer />
     </main>
   );
 }

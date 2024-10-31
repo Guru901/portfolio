@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const Loader = () => {
@@ -8,6 +8,8 @@ const Loader = () => {
   const greenControls = useAnimation();
   const h1Controls = useAnimation();
   const h2Controls = useAnimation();
+
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.add("no-scroll");
@@ -50,18 +52,22 @@ const Loader = () => {
         y: "-100%",
         transition: { duration: 0.5, ease: "easeInOut" },
       });
+
+      if (!containerRef.current) return;
+      containerRef.current.style.display = "none";
     };
 
     loadSequence();
-
     return () => {
-      // Ensure scrolling is enabled if the component unmounts
       document.body.classList.remove("no-scroll");
     };
   }, [blackControls, greenControls, h1Controls, h2Controls]);
 
   return (
-    <div className="fixed top-0 w-full h-screen z-50 overflow-hidden">
+    <div
+      ref={containerRef}
+      className="fixed top-0 w-full h-screen z-50 overflow-hidden"
+    >
       {/* Black Panel */}
       <motion.div
         className="bg-black h-screen flex justify-center items-center"
