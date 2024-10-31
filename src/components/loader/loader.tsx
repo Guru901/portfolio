@@ -13,33 +13,34 @@ const Loader = () => {
 
   useEffect(() => {
     document.body.classList.add("no-scroll");
+
     const loadSequence = async () => {
-      // Text animations for initial reveal
-      await h1Controls.start({
-        x: -130,
+      h1Controls.start({
+        x: -120,
         opacity: 1,
-        transition: { duration: 0.5, ease: "easeInOut" }, // Faster reveal
-      });
-      await h2Controls.start({
-        x: 130,
-        opacity: 1,
-        transition: { duration: 0.5, ease: "easeInOut" }, // Faster reveal
+        transition: { duration: 0.5, ease: "easeInOut" },
       });
 
-      // Fade out text
-      await h1Controls.start({
-        opacity: 0,
-        transition: { duration: 0.5 },
-      });
       await h2Controls.start({
-        opacity: 0,
-        transition: { duration: 0.5, delay: 0.15 },
+        x: 120,
+        opacity: 1,
+        transition: { duration: 0.5, ease: "easeInOut" },
       });
 
-      // Start black panel and green panel animations simultaneously
+      await Promise.all([
+        h1Controls.start({
+          opacity: 0,
+          transition: { duration: 0.5 },
+        }),
+        h2Controls.start({
+          opacity: 0,
+          transition: { duration: 0.5 },
+        }),
+      ]);
+
       blackControls.start({
         y: "-100%",
-        transition: { duration: 0.5, ease: "easeInOut" }, // Faster upward movement
+        transition: { duration: 0.5, ease: "easeInOut" },
       });
 
       greenControls.start({
@@ -47,7 +48,6 @@ const Loader = () => {
         transition: { duration: 0.5, ease: "easeInOut" },
       });
 
-      // Animate the green panel to move off the top of the screen
       await greenControls.start({
         y: "-100%",
         transition: { duration: 0.5, ease: "easeInOut" },
@@ -55,12 +55,11 @@ const Loader = () => {
 
       if (!containerRef.current) return;
       containerRef.current.style.display = "none";
+
+      document.body.classList.remove("no-scroll");
     };
 
     loadSequence();
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
   }, [blackControls, greenControls, h1Controls, h2Controls]);
 
   return (
@@ -68,11 +67,10 @@ const Loader = () => {
       ref={containerRef}
       className="fixed top-0 w-full h-screen z-50 overflow-hidden"
     >
-      {/* Black Panel */}
       <motion.div
         className="bg-black h-screen flex justify-center items-center"
         animate={blackControls}
-        initial={{ y: 0 }} // Start at full height
+        initial={{ y: 0 }}
       >
         <motion.h1
           className="absolute bold-font text-6xl opacity-0 bg-gradient-to-r from-[#ffb74d] to-[#b71c1c] bg-clip-text text-transparent m-0"
@@ -88,10 +86,9 @@ const Loader = () => {
         </motion.h1>
       </motion.div>
 
-      {/* Gradient Panel */}
       <motion.div
         className="fixed bottom-0 w-full h-screen bg-gradient-to-r from-[#ffb74d] to-[#b71c1c]"
-        initial={{ y: "100%" }} // Start off-screen at the bottom
+        initial={{ y: "100%" }}
         animate={greenControls}
       />
     </div>

@@ -98,9 +98,9 @@ export default function Socials() {
   ];
 
   return (
-    <div className="fixed top-1/2 left-0 flex flex-col items-center bg-[#f5f5f4] rounded-lg shadow-lg">
+    <div className="fixed top-1/2 left-0 flex flex-col items-center bg-[#f5f5f4] rounded-lg shadow-2xl">
       {icons.map((icon) => (
-        <Link key={icon.index} className="p-2" href={icon.href}>
+        <Link target="_blank" key={icon.index} className="p-2" href={icon.href}>
           <div key={icon.index}>{icon.icon}</div>
         </Link>
       ))}

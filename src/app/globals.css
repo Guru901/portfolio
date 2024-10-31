@@ -39,6 +39,7 @@ textarea {
 
 .no-scroll {
   overflow: hidden;
+  cursor: url("/cursors/beachball.svg"), auto;
 }
 
 .box {
