@@ -21,7 +21,7 @@ export default function MouseFollower() {
         return;
       }
 
-      setPostion({ x: event.pageX - 12, y: event.pageY - 13 });
+      setPostion({ x: event.pageX + 12, y: event.pageY + 12 });
     };
 
     window.addEventListener("mousemove", handleMouseMove);

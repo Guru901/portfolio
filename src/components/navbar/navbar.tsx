@@ -17,7 +17,7 @@ export default function Navbar() {
       </div>
       <div className="hidden gap-9 pt-[32px] pr-[74px] md:flex">
         {links.map((link) => (
-          <Link key={link.name} href={link.href}>
+          <Link className="h-min" key={link.name} href={link.href}>
             <p className="text-[#1d1d1d] font-[600] text-[20px] md:text-[24px] leading-normal">
               {link.name}
             </p>

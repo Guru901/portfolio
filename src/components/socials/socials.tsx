@@ -1,4 +1,4 @@
-import styles from "./style.module.css";
+import Link from "next/link";
 
 export default function Socials() {
   const icons = [
@@ -21,6 +21,7 @@ export default function Socials() {
         </svg>
       ),
       index: 0,
+      href: "mailto:guru911u@gmail.com",
     },
 
     {
@@ -46,6 +47,7 @@ export default function Socials() {
         </svg>
       ),
       index: 1,
+      href: "discord.com/users/guruuu_911",
     },
     {
       icon: (
@@ -63,6 +65,7 @@ export default function Socials() {
         </svg>
       ),
       index: 2,
+      href: "https://x.com/Gurvinder_911",
     },
 
     {
@@ -90,13 +93,16 @@ export default function Socials() {
         </svg>
       ),
       index: 3,
+      href: "https://github.com/guru901",
     },
   ];
 
   return (
-    <div className={styles.socialsContainer}>
+    <div className="fixed top-1/2 left-0 flex flex-col items-center bg-[#f5f5f4] rounded-lg shadow-lg">
       {icons.map((icon) => (
-        <div key={icon.index}>{icon.icon}</div>
+        <Link key={icon.index} className="p-2" href={icon.href}>
+          <div key={icon.index}>{icon.icon}</div>
+        </Link>
       ))}
     </div>
   );

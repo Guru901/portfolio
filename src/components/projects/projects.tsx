@@ -9,10 +9,10 @@ export default function Projects() {
         created
       </h1>
       <div className="flex flex-col gap-5 justify-center">
-        <div className="rounded-[15px] bg-[#f3f3f3] w-full items-center justify-center flex lg:flex-row flex-col lg:gap-8 p-8">
+        <div className="rounded-[15px] bg-[#f3f3f3] w-full items-center justify-center flex lg:flex-row flex-col lg:gap-8 lg:p-8 md:p-4">
           <img
             src={"/project-1.png"}
-            className="w-screen md:w-[836px] object-cover p-8"
+            className="w-screen md:w-[836px] object-cover md:p-4 lg:p-8"
             alt="project 1"
           />
           <div className="flex flex-col gap-2 text-center">
