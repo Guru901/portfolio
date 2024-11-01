@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const Loader = () => {
@@ -9,23 +9,43 @@ const Loader = () => {
   const h1Controls = useAnimation();
   const h2Controls = useAnimation();
 
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.add("no-scroll");
 
     const loadSequence = async () => {
-      h1Controls.start({
-        x: -120,
-        opacity: 1,
-        transition: { duration: 0.5, ease: "easeInOut" },
-      });
+      if (isMobile) {
+        h1Controls.start({
+          y: -50,
+          opacity: 1,
+          transition: { duration: 0.5, ease: "easeInOut" },
+        });
+      } else {
+        h1Controls.start({
+          x: -120,
+          opacity: 1,
+          transition: { duration: 0.5, ease: "easeInOut" },
+        });
+      }
 
-      await h2Controls.start({
-        x: 120,
-        opacity: 1,
-        transition: { duration: 0.5, ease: "easeInOut" },
-      });
+      if (isMobile) {
+        await h2Controls.start({
+          y: 20,
+          opacity: 1,
+          transition: { duration: 0.5, ease: "easeInOut" },
+        });
+      } else {
+        await h2Controls.start({
+          x: 120,
+          opacity: 1,
+          transition: { duration: 0.5, ease: "easeInOut" },
+        });
+      }
 
       await Promise.all([
         h1Controls.start({

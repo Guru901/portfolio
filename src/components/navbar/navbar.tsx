@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between">
       <div>
-        <h1 className="bg-gradient-to-r from-[#1d1d1d] to-[#838383] bg-clip-text text-transparent text-[24px] sm:text-[32px] font-bold underline decoration-black pt-[22px] pl-[25px]">
+        <h1 className="bg-gradient-to-r from-[#1d1d1d] to-[#838383] bg-clip-text text-transparent text-[28px] sm:text-[32px] font-bold underline decoration-black pt-[22px] pl-[25px]">
           Gurvinder <br /> Singh
         </h1>
       </div>

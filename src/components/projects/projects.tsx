@@ -2,8 +2,8 @@ import HighlightedText from "@/components/HighlightedText";
 
 export default function Projects() {
   return (
-    <div className="lg:px-[60px] pt-10 flex flex-col gap-14">
-      <h1 className="px-4 lg:px-0 text-[#1e1e1e] text-[7vw]  lg:text-[8vw] xl:text-[77px] font-bold leading-normal">
+    <div className="lg:px-[60px] pt-10 flex flex-col gap-3 md:gap-14">
+      <h1 className="px-4 lg:px-0 text-[#1e1e1e] text-[13vw] md:text-[8vw]  lg:text-[8vw] xl:text-[77px] font-bold leading-normal">
         Things <HighlightedText>I have</HighlightedText>
         <br />
         created

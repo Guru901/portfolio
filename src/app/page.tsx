@@ -28,21 +28,23 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-10 pb-10">
+    <main
+      className={`flex flex-col ${isMobile ? "gap-7" : "gap-10"} pb-3 md:pb-10`}
+    >
       <MouseFollower />
       <Loader />
       <Navbar />
       <Socials />
-      <div className="pt-10 flex flex-col mx-auto">
+      <div className="flex flex-col mx-auto pl-6 md:p-0 pt-10">
         <span
-          className={`text-[17vw] md:text-[14vw] w-screen pl-[2vw] lg:text-[13vw] bold-font leading-[100%] bg-gradient-to-r from-[#3a3a3a] via-[#2a2a2a] to-[#0f0f0f] bg-clip-text text-transparent`}
+          className={`text-[19vw] md:text-[14vw] w-screen md:pl-[2vw] lg:text-[13vw] bold-font leading-[100%] bg-gradient-to-r from-[#3a3a3a] via-[#2a2a2a] to-[#0f0f0f] bg-clip-text text-transparent`}
         >
           Gurvinder is a {isMobile ? "web" : ""}
         </span>
         <span
           className={` ${
-            isMobile ? "text-[16vw]" : "text-[12vw]"
-          } md:text-[12vw] lg:text-[12vw] bold-font leading-[100%] bg-gradient-to-r from-[#ffb74d] via-[#ff6f61] to-[#b71c1c] bg-clip-text text-transparent pl-[10vw]`}
+            isMobile ? "text-[18vw]" : "text-[12vw]"
+          } md:text-[12vw] lg:text-[12vw] bold-font leading-[100%] bg-gradient-to-r from-[#ffb74d] via-[#ff6f61] to-[#b71c1c] bg-clip-text text-transparent md:pl-[10vw]`}
         >
           {isMobile ? "developer" : "web developer"}
         </span>
