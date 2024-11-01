@@ -10,7 +10,9 @@ import MouseFollower from "@/components/mouseFollower";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
 
   useEffect(() => {
     const handleResize = () => {
