@@ -14,7 +14,10 @@ export default function Home() {
     typeof window !== "undefined" ? window.innerWidth < 768 : false
   );
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
+    setIsLoaded(true);
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -31,9 +34,9 @@ export default function Home() {
     <main
       className={`flex flex-col ${isMobile ? "gap-7" : "gap-10"} pb-3 md:pb-10`}
     >
-      <MouseFollower />
-      <Loader />
       <Navbar />
+      <MouseFollower />
+      {!isLoaded && <Loader />}
       <Socials />
       <div className="flex flex-col mx-auto pl-6 md:p-0 pt-10">
         <span

@@ -8,7 +8,7 @@ export default function HighlightedText({
   return (
     <span
       {...props}
-      className="relative text-transparent bg-gradient-to-r from-[#ffb74d] to-[#b71c1c] bg-clip-text underline decoration-4 decoration-[#ffb74d]"
+      className="relative text-transparent bg-gradient-to-r from-[#ffb74d] to-[#b71c1c] bg-clip-text underline decoration-3 decoration-[#ffb74d]"
     >
       {children}
     </span>

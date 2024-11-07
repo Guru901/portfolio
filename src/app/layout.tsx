@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo_Narrow } from "next/font/google";
 import "./globals.css";
+import Socials from "@/components/socials/socials";
 
 const archivo = Archivo_Narrow({ subsets: ["latin"] });
 
@@ -16,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${archivo.className} antialiased`}>{children}</body>
+      <body className={`${archivo.className} antialiased`}>
+        {children}
+
+        <Socials />
+      </body>
     </html>
   );
 }

@@ -1,4 +1,3 @@
-"client-only";
 "use client";
 
 import { motion } from "framer-motion";
