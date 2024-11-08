@@ -4,15 +4,9 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function MouseFollower() {
-  const [isMounted, setIsMounted] = useState(false);
-
   const box = useRef<HTMLDivElement>(null);
 
   const [postion, setPostion] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -30,9 +24,7 @@ export default function MouseFollower() {
     };
   }, []);
 
-  if (!isMounted) {
-    return null;
-  }
+  if (typeof window === "undefined") return;
 
   return (
     <motion.div

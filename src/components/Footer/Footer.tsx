@@ -10,7 +10,7 @@ export default function Footer() {
           <HighlightedText className="border-none">,</HighlightedText>
         </h1>
         <h1 className="text-xl sm:text-[3vw] md:text-2xl font-semibold">
-          © 2024 Designed and built By{" "}
+          © 2024 Designed and built by{" "}
           <HighlightedText>Gurvinder Singh</HighlightedText>
         </h1>
       </div>

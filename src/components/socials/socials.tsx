@@ -96,7 +96,6 @@ export default function Socials() {
       href: "https://github.com/guru901",
     },
   ];
-
   return (
     <div className="fixed top-1/2 left-0 flex flex-col items-center bg-[#f5f5f4] rounded-lg shadow-2xl">
       {icons.map((icon) => (

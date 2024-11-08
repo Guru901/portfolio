@@ -1,3 +1,10 @@
+import Navbar from "@/components/navbar/navbar";
+
 export default function ReachOut() {
-  return <div>Reach out</div>;
+  return (
+    <main>
+      <Navbar />
+      <h1>React out</h1>
+    </main>
+  );
 }
